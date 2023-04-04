@@ -1,0 +1,19 @@
+controllers:
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
+    type: attribute
+
+user_register:
+    path: /register
+    controller: App\Controller\UserManagementController::registerUser
+    methods: POST
+
+user_login:
+    path: /login
+    controller: App\Controller\UserManagementController::loginUser
+    methods: POST
+
+user_logout:
+    path: /logout
+    methods: GET
