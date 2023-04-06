@@ -20,7 +20,7 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 10, unique: true)]
     private ?string $username = null;
 
-    #[ORM\Column(length: 36)]
+    #[ORM\Column(length: 120)]
     private ?string $password = null;
 
     #[ORM\Column(length: 20, nullable: true)]
@@ -29,8 +29,8 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 20, nullable: true)]
     private ?string $last_name = null;
 
-    #[ORM\Column(type: 'json')]
-    private $roles = [];
+    #[ORM\Column]
+  private ?array $roles = [];
 
     #[ORM\OneToMany(mappedBy: 'username', targetEntity: Booking::class)]
     private Collection $bookings;
@@ -146,6 +146,7 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
+        return $this;
     }
 
     /**

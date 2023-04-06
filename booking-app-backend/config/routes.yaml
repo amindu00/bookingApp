@@ -5,15 +5,15 @@ controllers:
     type: attribute
 
 user_register:
-    path: /register
-    controller: App\Controller\UserManagementController::registerUser
+    path: /api/register
+    controller: App\Controller\AuthenticationController\RegistrationController::index
     methods: POST
 
 user_login:
-    path: /login
-    controller: App\Controller\UserManagementController::loginUser
+    path: /api/login
+    controller: App\Controller\AuthenticationController\LoginController::index
     methods: POST
 
 user_logout:
-    path: /logout
+    path: /api/logout
     methods: GET
