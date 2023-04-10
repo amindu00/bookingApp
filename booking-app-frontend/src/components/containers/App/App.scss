@@ -16,3 +16,48 @@
 .App-link {
   color: #61dafb;
 }
+
+.homeNav {
+  background: rgb(202, 240, 248);
+  background: linear-gradient(0deg, rgba(0, 119, 182, 1) 0%, rgba(3, 4, 94, 1) 50%);
+  display: flex;
+  justify-content: space-between;
+
+  button {
+    height: auto;
+    background-color: var(--color4);
+    color: var(--color1);
+    padding: 1em;
+    border: none;
+    margin: 0;
+  }
+
+  button:hover {
+    background-color: var(--color3);
+    color: var(--color1);
+  }
+
+  .logo {
+    display: flex;
+    justify-content: center;
+    background-color: (--color1);
+    align-items: center;
+  }
+}
+
+.screen {
+  z-index: 2;
+  position: absolute;
+  background: rgba(202, 240, 248, .5);
+  padding: 1em;
+
+  &.left {
+    top: 30vh;
+    left: 10vw;
+  }
+
+  &.center {
+    top: 30vh;
+    left: 40vw;
+  }
+}

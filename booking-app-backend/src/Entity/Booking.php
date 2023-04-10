@@ -16,7 +16,7 @@ class Booking
 
     #[ORM\ManyToOne(inversedBy: 'bookings')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?users $username = null;
+    private ?Users $username = null;
 
     #[ORM\OneToOne(inversedBy: 'booking', cascade: ['persist', 'remove'])]
     #[ORM\JoinColumn(nullable: false)]
@@ -33,12 +33,12 @@ class Booking
         return $this->id;
     }
 
-    public function getUsername(): ?users
+    public function getUsername(): ?Users
     {
         return $this->username;
     }
 
-    public function setUsername(?users $username): self
+    public function setUsername(?Users $username): self
     {
         $this->username = $username;
         return $this;

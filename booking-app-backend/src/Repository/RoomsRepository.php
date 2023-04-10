@@ -19,6 +19,7 @@ class RoomsRepository extends ServiceEntityRepository
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Rooms::class);
+
     }
 
     public function save(Rooms $entity, bool $flush = false): void
@@ -38,6 +39,20 @@ class RoomsRepository extends ServiceEntityRepository
             $this->getEntityManager()->flush();
         }
     }
+
+    public function findByType(string $type): array
+    {
+        return $this->createQueryBuilder('r')
+            ->where("r.room_type = :val")
+            ->setParameter('val', $type)
+            // ->orderBy('r.id', 'ASC')
+            ->setMaxResults(10)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
+
 
 //    /**
 //     * @return Rooms[] Returns an array of Rooms objects

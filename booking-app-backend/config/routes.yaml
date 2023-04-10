@@ -17,3 +17,20 @@ user_login:
 user_logout:
     path: /api/logout
     methods: GET
+
+add_rooms:
+    path: /rooms/
+    controller: App\Controller\RoomController::addRoom
+    methods: POST
+
+get_rooms:
+    path: /rooms/
+    controller: App\Controller\RoomController::getAllRooms
+
+get_room_by_id:
+    path: /rooms/room/{id}
+    controller: App\Controller\RoomController::getRoomById
+
+get_room_by_type:
+    path: /rooms/room/
+    controller: App\Controller\RoomController::getRoomByType
